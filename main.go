@@ -6,6 +6,7 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.Use(RateLimiterMiddleware())
 	RegisterRoutes(r)
 	r.Run(":8080")
 }
